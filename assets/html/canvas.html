@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas - Lat-LKS-Ali</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Roboto+Mono&display=swap"
+        rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <!-- Loader -->
+    <div id="loader">
+        <div class="spinner"></div>
+        <h2>Loading...</h2>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="../../index.html" class="logo">CodeByAli</a>
+            <button class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item"><a href="../../index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="canvas.html" class="nav-link active">Canvas</a></li>
+                <li class="nav-item"><a href="timer.html" class="nav-link">Timer</a></li>
+                <li class="nav-item"><a href="puzzle.html" class="nav-link">Puzzle</a></li>
+                <li class="nav-item"><a href="calendar.html" class="nav-link">Calendar</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="canvas">
+        <div class="circle"></div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer" style="padding-bottom: 11%;">
+        <div class="container">
+            <div class="footer-content">
+                <a href="index.html" class="logo">CodeByAli</a>
+                <ul class="footer-links">
+                    <li class="footer-link"><a href="../../index.html">Home</a></li>
+                    <li class="nav-item"><a href="canvas.html" class="nav-link">Canvas</a></li>
+                    <li class="footer-link"><a href="timer.html">Timer</a></li>
+                    <li class="footer-link"><a href="puzzle.html">Puzzle</a></li>
+                    <li class="footer-link"><a href="calendar.html">Calendar</a></li>
+                </ul>
+                <p class="copyright">&copy; 2025 CodeByAli. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a nav link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+
+
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                document.getElementById('loader').style.display = 'none';
+                document.getElementById('content').style.display = 'block';
+            }, 1000);
+        });
+    </script>
+
+</body>
+
+</html>

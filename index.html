@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Lat-LKS-Ali</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Roboto+Mono&display=swap"
+        rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .navbar {
+            background-color: transparent;
+            padding: 1rem 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            transition: background-color var(--transition-speed) ease;
+        }
+
+        .navbar.scrolled {
+            background-color: var(--dark-color);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Loader -->
+    <div id="loader">
+        <div class="spinner"></div>
+        <h2>Loading...</h2>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">CodeByAli</a>
+            <button class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
+                <li class="nav-item"><a href="assets/html/canvas.html" class="nav-link">Canvas</a></li>
+                <li class="nav-item"><a href="assets/html/timer.html" class="nav-link">Timer</a></li>
+                <li class="nav-item"><a href="assets/html/puzzle.html" class="nav-link">Puzzle</a></li>
+                <li class="nav-item"><a href="assets/html/calendar.html" class="nav-link">Calendar</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Welcome to Our 5-Page Website</h1>
+            <p class="hero-subtitle">Explore our interactive features including a timer, picture puzzle, and calendar
+            </p>
+            <div class="hero-buttons">
+                <a href="assets/html/timer.html" class="btn">Try the Timer</a>
+                <a href="assets/html/puzzle.html" class="btn btn-secondary">Play the Puzzle</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Our Features</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <h3><i class="fas fa-circle"></i>&nbsp;Circle in Canvas</h3>
+                        <p>Sees the circle in the canvas goes moving left and right.</p>
+                        <a href="assets/html/canvas.html" class="btn">View Canvas</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <h3><i class="fas fa-clock"></i> Interactive Timer</h3>
+                        <p>A fully functional digital timer with start, pause, and reset functionality.</p>
+                        <a href="assets/html/timer.html" class="btn">View Timer</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <h3><i class="fas fa-puzzle-piece"></i> Picture Puzzle</h3>
+                        <p>Test your skills with our 3x3 sliding picture puzzle game.</p>
+                        <a href="assets/html/puzzle.html" class="btn">Play Puzzle</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <h3><i class="fas fa-calendar-alt"></i> Interactive Calendar</h3>
+                        <p>Browse through months and mark important dates on our calendar.</p>
+                        <a href="assets/html/calendar.html" class="btn">Open Calendar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <a href="index.html" class="logo">CodeByAli</a>
+                <ul class="footer-links">
+                    <li class="footer-link"><a href="index.html">Home</a></li>
+                    <li class="footer-link"><a href="assets/html/timer.html">Timer</a></li>
+                    <li class="footer-link"><a href="assets/html/puzzle.html">Puzzle</a></li>
+                    <li class="footer-link"><a href="assets/html/calendar.html">Calendar</a></li>
+                </ul>
+                <p class="copyright">&copy; 2025 CodeByAli. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+        const navbar = document.querySelector('.navbar');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a nav link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Navbar scroll behavior
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                document.getElementById('loader').style.display = 'none';
+                document.getElementById('content').style.display = 'block';
+            }, 1000);
+        });
+    </script>
+</body>
+
+</html>
